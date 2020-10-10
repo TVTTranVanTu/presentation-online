@@ -14,7 +14,7 @@
   "scripts": {
     "watch": "nodemon --watch \"src/\" --exec \"node src/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node public/server.js"
   },
   "author": "Tran VaN Tu",
   "license": "ISC"
