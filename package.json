@@ -14,12 +14,8 @@
   "scripts": {
     "watch": "nodemon --watch \"src/\" --exec \"node src/app.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node src/server.js"
   },
-  "keywords": [
-    "LiveStream",
-    "Server"
-  ],
   "author": "Tran VaN Tu",
   "license": "ISC"
 }
