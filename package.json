@@ -8,14 +8,14 @@
     "serve-favicon": "^2.5.0",
     "socket.io": "^2.3.0"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
   "scripts": {
-    "watch": "nodemon --watch \"src/\" --exec \"node src/app.js\"",
+    "watch": "nodemon --watch \"public/\" --exec \"node public/server.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node public/server.js"
+    "start": "nodemon public/server.js"
   },
   "author": "Tran VaN Tu",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
 }
