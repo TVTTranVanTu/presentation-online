@@ -56,7 +56,10 @@ export default {
     getUserFullMedia() {
         if (this.userMediaAvailable()) {
             return navigator.mediaDevices.getUserMedia({
-                video: true,
+                video: {
+                    height: window.innerHeight / 3,
+                    width: window.innerWidth / 4.3,
+                },
                 audio: {
                     echoCancellation: true,
                     noiseSuppression: true
@@ -91,7 +94,9 @@ export default {
         if (this.userMediaAvailable()) {
             return navigator.mediaDevices.getDisplayMedia({
                 video: {
-                    cursor: "always"
+                    cursor: "always",
+                    height: window.innerHeight / 3,
+                    width: window.innerWidth / 4.3,
                 },
                 audio: {
                     echoCancellation: true,
@@ -250,15 +255,20 @@ export default {
     },
 
 
+
+
     adjustVideoElemSize() {
         let elem = document.getElementsByClassName('card');
         let totalRemoteVideosDesktop = elem.length;
         let newWidth = '25%';
+        let newHeight = '32%';
+        let height = window.innerHeight / 3;
+        let width = window.innerWidth / 4.3;
 
 
         for (let i = 0; i < totalRemoteVideosDesktop; i++) {
-            elem[i].style.width = newWidth;
-            elem[i].style.height = "30%"
+            elem[i].style.width = width;
+            elem[i].style.height = height;
         }
     },
 

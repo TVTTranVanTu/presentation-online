@@ -63,12 +63,13 @@
 }
 
 .main {
-    padding-top: 40px;
+    width: 100%;
+    height: 100%;
 }
 
 .remote-video {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .remote-video-controls {
@@ -212,11 +213,33 @@
 }
 .card {
     padding: 0;
-    margin: 5px;
+    margin: 0;
+    box-sizing: border-box;
 }
 @media (min-width: 768px) {
     .card {
-        width: 25%;
         z-index: 1000;
+        height: auto;
     }
+}
+.room-meeting {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+.room-meeting .navbar {
+    width: 5%;
+    height: 100vh;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.btn {
+    font-size: 20px !important;
+    margin-top: 30px;
+}
+.room-meeting .container-fluid {
+    width: 95% !important;
+    box-sizing: border-box;
+    height: 100%;
 }
