@@ -15,12 +15,9 @@ window.addEventListener('load', () => {
 
         else {
             chatElem.attributes.removeNamedItem('hidden');
-            mainSecElem.classList.remove('col-md-12');
-            mainSecElem.classList.add('col-md-9');
             chatElem.classList.add('chat-opened');
         }
 
-        //remove the 'New' badge on chat icon (if any) once chat is opened.
         setTimeout(() => {
             if (document.querySelector('#chat-pane').classList.contains('chat-opened')) {
                 helpers.toggleChatNotificationBadge();
@@ -114,6 +111,10 @@ window.addEventListener('load', () => {
         }
     });
 
+    document.getElementById('hidden-item').addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('#chat-pane').style.display = "none";
+    })
 
 
     document.getElementById('closeModal').addEventListener('click', () => {

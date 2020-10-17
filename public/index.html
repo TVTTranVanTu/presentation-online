@@ -95,18 +95,28 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 chat-col d-print-none mb-2 bg-info" id='chat-pane' hidden>
-                    <div class="row">
-                        <div class="col-12 text-center h2 mb-3">messages</div>
+
+            </div>
+        </div>
+        <div class="col-md-3 chat-col d-print-none mb-2 bg-info" id='chat-pane' hidden>
+            <div class="row">
+                <div class="col-12 text-center h2 mb-3 title-chat">
+                    <div class="left">
+                        <i class="fas fa-users"></i>Room chat
+
                     </div>
-
-                    <div id='chat-messages'></div>
-
-                    <div class="row">
-                        <textarea id='chat-input' class="form-control rounded-0 chat-box border-info" rows='3'
-                            placeholder="Type here..."></textarea>
+                    <div class="right" id="hidden-item">
+                        <i class="fas fa-times"></i>
                     </div>
                 </div>
+
+            </div>
+
+            <div id='chat-messages'></div>
+
+            <div class="row">
+                <textarea id='chat-input' class="form-control rounded-0 chat-box border-info" rows='3'
+                    placeholder="Type here..."></textarea>
             </div>
         </div>
     </div>
