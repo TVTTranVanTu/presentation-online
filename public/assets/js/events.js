@@ -2,6 +2,13 @@ import helpers from './helpers.js';
 
 window.addEventListener('load', () => {
     //When the chat icon is clicked
+    document.querySelector('#hidden-item').addEventListener('click', (e) => {
+        e.preventDefault();
+        let chatElem = document.querySelector('#chat-pane');
+
+        chatElem.setAttribute('hidden', true);
+
+    });
     document.querySelector('#toggle-chat-pane').addEventListener('click', (e) => {
         let chatElem = document.querySelector('#chat-pane');
         let mainSecElem = document.querySelector('#main-section');
@@ -111,10 +118,7 @@ window.addEventListener('load', () => {
         }
     });
 
-    document.getElementById('hidden-item').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector('#chat-pane').style.display = "none";
-    })
+
 
 
     document.getElementById('closeModal').addEventListener('click', () => {

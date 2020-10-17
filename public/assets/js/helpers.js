@@ -57,7 +57,7 @@ export default {
         if (this.userMediaAvailable()) {
             return navigator.mediaDevices.getUserMedia({
                 video: {
-                    height: window.innerHeight / 3,
+                    height: window.innerHeight / 3.3,
                     width: window.innerWidth / 4.3,
                 },
                 audio: {
@@ -95,7 +95,7 @@ export default {
             return navigator.mediaDevices.getDisplayMedia({
                 video: {
                     cursor: "always",
-                    height: window.innerHeight / 3,
+                    height: window.innerHeight / 3.3,
                     width: window.innerWidth / 4.3,
                 },
                 audio: {
@@ -262,7 +262,7 @@ export default {
         let totalRemoteVideosDesktop = elem.length;
         let newWidth = '25%';
         let newHeight = '32%';
-        let height = window.innerHeight / 3;
+        let height = window.innerHeight / 3.3;
         let width = window.innerWidth / 4.3;
 
 

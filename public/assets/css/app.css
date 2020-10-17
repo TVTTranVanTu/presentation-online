@@ -1,3 +1,8 @@
+.col-md-12 {
+    margin: 0;
+    padding: 0;
+}
+
 .title-chat {
     font-size: 16px;
     border-bottom: 1px solid white;
@@ -16,6 +21,7 @@
     color: red;
 }
 .chat-col {
+    box-sizing: border-box;
     right: 30px;
     bottom: 0;
     z-index: 1000;
@@ -41,9 +47,10 @@
 }
 
 #chat-messages {
-    height: 70%;
-    position: absolute;
-    top: 55px;
+    height: 75%;
+    position: relative;
+    width: 100%;
+    top: 15px;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
@@ -244,9 +251,9 @@ textarea {
     }
 }
 .card {
-    padding: 0;
     margin: 0;
-    margin-left: 0.5rem;
+    width: auto !important;
+    height: auto !important;
     box-sizing: border-box;
 }
 video {
@@ -257,6 +264,10 @@ video {
         z-index: 1000;
         height: auto;
     }
+}
+.container-fluid .row {
+    margin: 0;
+    padding: 0;
 }
 .room-meeting {
     display: flex;
@@ -279,7 +290,8 @@ video {
     margin-top: 40px;
 }
 .room-meeting .container-fluid {
-    width: 95% !important;
     box-sizing: border-box;
     height: 100%;
+    margin: 10px;
+    padding: 0;
 }
