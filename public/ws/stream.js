@@ -5,17 +5,18 @@ const stream = (socket) => {
 
         if (socket.adapter.rooms[data.room].length > 1) {
             socket.to(data.room).emit('new user', { socketId: data.socketId });
-            console.log(data.room);
-            console.log(data.socketId);
+            console.log("User " + data.socketId + " connected " + "room :" + data.room);
         }
     });
 
 
     socket.on('newUserStart', (data) => {
         socket.to(data.to).emit('newUserStart', { sender: data.sender });
-        console.log(data)
     });
 
+    socket.on('ClientSendData', (data) => {
+        console.log(data);
+    });
 
     socket.on('sdp', (data) => {
         socket.to(data.to).emit('sdp', { description: data.description, sender: data.sender });

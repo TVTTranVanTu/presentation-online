@@ -57,6 +57,7 @@ window.addEventListener('load', () => {
             });
 
 
+
             socket.on('ice candidates', async (data) => {
                 data.candidate ? await pc[data.sender].addIceCandidate(new RTCIceCandidate(data.candidate)) : '';
             });
@@ -476,6 +477,11 @@ window.addEventListener('load', () => {
                     startRecording(videoStream);
                 }).catch(() => { });
             }
+        });
+        document.getElementById('enter-room').addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("hello");
+            socket.emit('ClientSendData', document.getElementById('username').val());
         });
     }
 });

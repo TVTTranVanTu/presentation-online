@@ -214,6 +214,7 @@
 .card {
     padding: 0;
     margin: 0;
+    margin-left: 0.5rem;
     box-sizing: border-box;
 }
 @media (min-width: 768px) {
@@ -230,13 +231,17 @@
 .room-meeting .navbar {
     width: 5%;
     height: 100vh;
+    padding: 0;
     text-align: center;
     box-sizing: border-box;
     position: relative;
 }
+.pull-right {
+    margin: 0 auto;
+}
 .btn {
     font-size: 20px !important;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .room-meeting .container-fluid {
     width: 95% !important;
