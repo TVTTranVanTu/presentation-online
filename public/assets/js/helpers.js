@@ -120,6 +120,11 @@ export default {
         };
     },
 
+    username(data) {
+        console.log(data);
+
+    },
+
 
     addChat(data, senderType) {
         let chatMsgDiv = document.querySelector('#chat-messages');
@@ -231,6 +236,7 @@ export default {
     },
 
 
+
     toggleModal(id, show) {
         let el = document.getElementById(id);
 
@@ -260,8 +266,6 @@ export default {
     adjustVideoElemSize() {
         let elem = document.getElementsByClassName('card');
         let totalRemoteVideosDesktop = elem.length;
-        let newWidth = '25%';
-        let newHeight = '32%';
         let height = window.innerHeight / 3.3;
         let width = window.innerWidth / 4.3;
 

@@ -21,6 +21,8 @@ window.addEventListener('load', () => {
 
         var pc = [];
 
+
+
         let socket = io('/stream');
 
         var socketId = '';
@@ -51,10 +53,12 @@ window.addEventListener('load', () => {
             });
 
 
+
             socket.on('newUserStart', (data) => {
                 pc.push(data.sender);
                 init(false, data.sender);
             });
+
 
 
 
@@ -112,6 +116,17 @@ window.addEventListener('load', () => {
             });
         }
 
+        function User() {
+            let data = {
+                room: room,
+                sender: username
+            }
+            var listUser = [];
+            listUser.push(data);
+            socket.emit('listuser', listUser)
+            h.username(listUser);
+        }
+
 
         function sendMsg(msg) {
             let data = {
@@ -122,7 +137,6 @@ window.addEventListener('load', () => {
 
             //emit chat message
             socket.emit('chat', data);
-            console.log(data);
             //add localchat
             h.addChat(data, 'local');
         }
@@ -347,7 +361,12 @@ window.addEventListener('load', () => {
             };
         }
 
+        //list user
 
+        setTimeout(() => {
+            User();
+
+        }, 3000);
         //Chat textarea
         document.getElementById('chat-input').addEventListener('keypress', (e) => {
             if (e.which === 13 && (e.target.value.trim())) {
@@ -430,10 +449,7 @@ window.addEventListener('load', () => {
 
         //When record button is clicked
         document.getElementById('record').addEventListener('click', (e) => {
-            /**
-             * Ask user what they want to record.
-             * Get the stream based on selection and start recording
-             */
+
             if (!mediaRecorder || mediaRecorder.state == 'inactive') {
                 h.toggleModal('recording-options-modal', true);
             }
@@ -478,10 +494,7 @@ window.addEventListener('load', () => {
                 }).catch(() => { });
             }
         });
-        document.getElementById('enter-room').addEventListener('click', (e) => {
-            e.preventDefault();
-            console.log("hello");
-            socket.emit('ClientSendData', document.getElementById('username').val());
-        });
+
+
     }
 });

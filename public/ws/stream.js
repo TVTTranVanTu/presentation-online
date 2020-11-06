@@ -6,15 +6,21 @@ const stream = (socket) => {
         if (socket.adapter.rooms[data.room].length > 1) {
             socket.to(data.room).emit('new user', { socketId: data.socketId });
             console.log("User " + data.socketId + " connected " + "room :" + data.room);
+
         }
+        socket.on('disconnect', () => {
+            console.log("user " + socket.id + ' disconnect room :' + data.room);
+        });
     });
+
+
 
 
     socket.on('newUserStart', (data) => {
         socket.to(data.to).emit('newUserStart', { sender: data.sender });
     });
 
-    socket.on('ClientSendData', (data) => {
+    socket.on('listuser', (data) => {
         console.log(data);
     });
 
